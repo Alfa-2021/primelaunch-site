@@ -8,6 +8,7 @@ It tells visitors in one look what we do: we launch new brands end to end.
 ## Files
 - `index.html`: the whole site in one file (HTML, CSS and JavaScript). No build step.
 - `CNAME`: GitHub's custom-domain file (`primelaunch.co.in`). Keep it: deleting it drops the domain.
+- `og.jpg`: the 1200×630 preview image WhatsApp, Facebook and LinkedIn show when someone shares the link. Keep it under 300 KB so WhatsApp displays it.
 - `.nojekyll`: tells GitHub Pages to serve the files as they are.
 - `README.md`: this note.
 
