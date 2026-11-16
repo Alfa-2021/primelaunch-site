@@ -29,7 +29,7 @@ It tells visitors in one look what we do: we launch new brands end to end.
 
 ## 3D and speed
 - Three.js r128 loads from cdnjs (exact version, with an SRI hash) after the page is already visible.
-- A CSS gem shows first. It stays if the phone can't run WebGL or the CDN is blocked.
+- An SVG gem shows first. It stays if the phone can't run WebGL or the CDN is blocked.
 - The 3D scene pauses when it is off-screen or the tab is hidden. With "reduce motion" switched on, it shows a still frame.
 
 ## How to edit
