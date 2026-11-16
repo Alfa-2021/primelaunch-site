@@ -3,11 +3,11 @@
 Brand website for **PrimeLaunch**, a launch studio by Alfa Team Management (+91 95683 06670).
 It tells visitors in one look what we do: we launch new brands end to end.
 
-- Preview: https://alfa-2021.github.io/primelaunch-site/
-- Planned home: https://primelaunch.co.in/ (not switched yet, see "Domain" below)
+- Live: https://primelaunch.co.in/ (www.primelaunch.co.in and the old https://alfa-2021.github.io/primelaunch-site/ link redirect here)
 
 ## Files
 - `index.html`: the whole site in one file (HTML, CSS and JavaScript). No build step.
+- `CNAME`: GitHub's custom-domain file (`primelaunch.co.in`). Keep it: deleting it drops the domain.
 - `.nojekyll`: tells GitHub Pages to serve the files as they are.
 - `README.md`: this note.
 
@@ -41,11 +41,13 @@ It tells visitors in one look what we do: we launch new brands end to end.
 ## Publish
 Commit and push to `main`. GitHub Pages redeploys in about a minute.
 
-## Domain (not switched yet)
-Today primelaunch.co.in still shows the "Luxury Living in Ganga Nagar" page on Netlify. The suggested switch:
-1. Move the Ganga Nagar page to a subdomain on Netlify, for example `ganganagar.primelaunch.co.in`.
-2. At GoDaddy, point the apex `@` to GitHub Pages with four A records: 185.199.108.153, 185.199.109.153, 185.199.110.153 and 185.199.111.153. Point `www` with a CNAME to `alfa-2021.github.io`.
-3. Once the names resolve, set the custom domain:
-   `gh api -X PUT repos/Alfa-2021/primelaunch-site/pages -f cname=primelaunch.co.in`
-4. Pull the `CNAME` file that GitHub commits, and keep it.
-5. Turn on "Enforce HTTPS" when the certificate is ready.
+## Domain
+primelaunch.co.in has pointed here since 16 Nov 2026. It replaced the old "Luxury Living in Ganga Nagar" page, which the owner no longer needed.
+
+DNS is at GoDaddy:
+- `A @` → 185.199.108.153, 185.199.109.153, 185.199.110.153 and 185.199.111.153.
+- `CNAME www` → `alfa-2021.github.io`.
+- Client demo subdomains such as `flocred` also have a CNAME to `alfa-2021.github.io`.
+- Keep the `_github-pages-challenge-alfa-2021` TXT record: it proves the domain belongs to this GitHub account.
+
+HTTPS is enforced. GitHub renews the Let's Encrypt certificate by itself. Don't add other A records to `@`, or the certificate stops renewing.
